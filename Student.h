@@ -147,8 +147,8 @@ class Student
 				case DegreeProgram:
 					cout << degreeProgram;
 					break;
-			default:
-				break;
+				default:
+					break;
 			}
 		}
 };
