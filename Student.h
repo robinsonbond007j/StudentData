@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Student
@@ -49,7 +50,7 @@ class Student
 		}
 
 	private:
-		int age;
+		int age = 0;
 	public:
 		//Getter/Setter for age
 		void SetAge(int a) {
@@ -60,7 +61,7 @@ class Student
 		}
 
 	private:
-		int numberOfDaysToCompleteEachCourse [3];
+		int numberOfDaysToCompleteEachCourse[3] = { 0,0,0 };
 	public:
 		//Getter/Setter for numberOfDaysToCompleteEachCourse
 		//Course 1
@@ -96,6 +97,59 @@ class Student
 			return degreeProgram;
 		}
 
-		
+	//Constructor for the class
+	public:
+		Student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysToCompleteCourse[3], string degreeProgram) {
+			//Assign the variables
+			SetStudentId(studentId);
+			SetFirstName(firstName);
+			SetLastName(lastName);
+			SetEmailAddress(emailAddress);
+			SetAge(age);
+			SetNumberOfDaysToCompleteCourse1(daysToCompleteCourse[0]);
+			SetNumberOfDaysToCompleteCourse2(daysToCompleteCourse[1]);
+			SetNumberOfDaysToCompleteCourse3(daysToCompleteCourse[2]);
+			SetDegreeProgram(degreeProgram);
+		}
+
+	enum PrintOut {
+		StudentId,
+		FirstName,
+		LastName,
+		EmailAddress,
+		Age,
+		NumberofDaysToCompleteEachCourse,
+		DegreeProgram
+	};
+
+	public:
+		void Print(PrintOut p) {
+			switch (p)
+			{
+				case StudentId:
+					cout << studentId;
+					break;
+				case FirstName:
+					cout << firstName;
+					break;
+				case LastName:
+					cout << lastName;
+					break;
+				case EmailAddress:
+					cout << emailAddress;
+					break;
+				case Age:
+					cout << age;
+					break;
+				case NumberofDaysToCompleteEachCourse:
+					cout << NumberofDaysToCompleteEachCourse;
+					break;
+				case DegreeProgram:
+					cout << degreeProgram;
+					break;
+			default:
+				break;
+			}
+		}
 };
 
