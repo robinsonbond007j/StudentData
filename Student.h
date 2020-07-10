@@ -99,16 +99,16 @@ class Student
 
 	//Constructor for the class
 	public:
-		Student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysToCompleteCourse[3], string degreeProgram) {
+		Student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysToCompleteCourse1, int daysToCompleteCourse2, int daysToCompleteCourse3, string degreeProgram) {
 			//Assign the variables
 			SetStudentId(studentId);
 			SetFirstName(firstName);
 			SetLastName(lastName);
 			SetEmailAddress(emailAddress);
 			SetAge(age);
-			SetNumberOfDaysToCompleteCourse1(daysToCompleteCourse[0]);
-			SetNumberOfDaysToCompleteCourse2(daysToCompleteCourse[1]);
-			SetNumberOfDaysToCompleteCourse3(daysToCompleteCourse[2]);
+			SetNumberOfDaysToCompleteCourse1(daysToCompleteCourse1);
+			SetNumberOfDaysToCompleteCourse2(daysToCompleteCourse2);
+			SetNumberOfDaysToCompleteCourse3(daysToCompleteCourse3);
 			SetDegreeProgram(degreeProgram);
 		}
 
