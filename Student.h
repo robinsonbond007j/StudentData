@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include "Degree.h"
 using namespace std;
 
 class Student
@@ -87,19 +88,19 @@ class Student
 		}
 
 	private:
-		string degreeProgram;
+		DegreeProgram degreeProgram;
 	public:
 		//Getter/Setter for degreeProgram
-		void SetDegreeProgram(string program) {
+		void SetDegreeProgram(DegreeProgram program) {
 			degreeProgram = program;
 		}
-		string GetDegreeProgram() {
+		DegreeProgram GetDegreeProgram() {
 			return degreeProgram;
 		}
 
 	//Constructor for the class
 	public:
-		Student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysToCompleteCourse1, int daysToCompleteCourse2, int daysToCompleteCourse3, string degreeProgram) {
+		Student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysToCompleteCourse1, int daysToCompleteCourse2, int daysToCompleteCourse3, DegreeProgram degreeProgram) {
 			//Assign the variables
 			SetStudentId(studentId);
 			SetFirstName(firstName);

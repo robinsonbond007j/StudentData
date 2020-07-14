@@ -1,6 +1,6 @@
 #pragma once
 enum DegreeProgram {
-	Security,
-	Network,
-	Software
+	SECURITY,
+	NETWORK,
+	SOFTWARE
 };
