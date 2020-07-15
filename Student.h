@@ -113,15 +113,16 @@ class Student
 			SetDegreeProgram(degreeProgram);
 		}
 
-	enum PrintOut {
-		StudentId,
-		FirstName,
-		LastName,
-		EmailAddress,
-		Age,
-		NumberofDaysToCompleteEachCourse,
-		DegreeProgram
-	};
+	public:
+		enum PrintOut {
+			StudentId,
+			FirstName,
+			LastName,
+			EmailAddress,
+			Age,
+			NumberofDaysToCompleteEachCourse,
+			DegreeProgram
+		};
 
 	public:
 		void Print(PrintOut p) {
@@ -143,7 +144,7 @@ class Student
 					cout << age;
 					break;
 				case NumberofDaysToCompleteEachCourse:
-					cout << NumberofDaysToCompleteEachCourse;
+					cout << numberOfDaysToCompleteEachCourse;
 					break;
 				case DegreeProgram:
 					cout << degreeProgram;

@@ -26,25 +26,81 @@ class Roster
 
 	public:
 		void remove(string studentId) {
-			//Convert studentId to int so we can find it in the array
-			string iString = studentId.substr(1, 1);
-			stringstream iStream(iString);
 			int i = 0;
-			iStream >> i;
-			string id;
-			//The array is a zero based index so subtract 1
-			if (i > 0) {
-				i -= 1;
-				id = classRosterArray[i]->GetStudentId;
-				//TODO need to finish writing pull the students information and then remove it
-				//TODO if the information exists. If it doesn't exist.
-				//TODO add an if statement like the else statement below.
+			bool studentFound = false;
+			for (Student* s : classRosterArray) {
+				if (s->GetStudentId == studentId) {
+					delete classRosterArray[i];
+					studentFound = true;
+					break;
+				}
+				i++;
 			}
-			//If the student is not found then write a message and return
-			else {
+			//We assume that the student entered wasn't found in the classRosterArray
+			if (!studentFound) {
 				cout << "The Student was not found." << endl;
-				return;
 			}
-			
+		}
+
+	public:
+		void printAll() {
+			//This prints all of the students information
+			for (Student* s : classRosterArray) {
+				cout << s->Print.StudentId + "	",
+					"First Name: ", s->Print.FirstName + "	",
+					"Last Name: ", s->Print.LastName + "	",
+					"Age: ", s->Print.Age + "	",
+					"daysInCourse: ", s->Print.NumberofDaysToCompleteEachCourse + "	",
+					"Degree Program: ", s->Print.DegreeProgram << endl;
+			}
+		}
+
+	public:
+		void printAverageDaysInCourse(string studentId) {
+			int i = 0;
+			int sumOfDays = 0;
+			int averageOfDays = 0;
+			for (Student* s : classRosterArray) {
+				if (s->GetStudentId == studentId) {
+					sumOfDays += s->GetNumberOfDaysToCompleteCourse1;
+					sumOfDays += s->GetNumberOfDaysToCompleteCourse2;
+					sumOfDays += s->GetNumberOfDaysToCompleteCourse3;
+					break;
+				}
+				i++;
+			}
+			if (sumOfDays > 0) {
+				averageOfDays = sumOfDays / 3;
+				cout << "Average Number of Days in course: " + averageOfDays << endl;
+			}
+		}
+
+	public:
+		void printInvalidEmails() {
+			for (Student* s : classRosterArray) {
+				string e = s->GetEmailAddress;
+				if (e.find(' ') != string::npos) {
+					//Found invalid email address
+					cout << "Found invalid email address: " + e << endl;
+				}
+				else if (e.find('.@') == string::npos) {
+					//Found invalid email address
+					cout << "Found invalid email address: " + e << endl;
+				}
+			}
+		}
+
+	public:
+		void printByDegreeProgram(DegreeProgram degreeProgram) {
+			for (Student* s : classRosterArray) {
+				if (s->GetDegreeProgram == degreeProgram) {
+					cout << s->Print.StudentId + "	",
+						"First Name: ", s->Print.FirstName + "	",
+						"Last Name: ", s->Print.LastName + "	",
+						"Age: ", s->Print.Age + "	",
+						"daysInCourse: ", s->Print.NumberofDaysToCompleteEachCourse + "	",
+						"Degree Program: ", s->Print.DegreeProgram << endl;
+				}
+			}
 		}
 };
