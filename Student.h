@@ -94,8 +94,25 @@ class Student
 		void SetDegreeProgram(DegreeProgram program) {
 			degreeProgram = program;
 		}
-		DegreeProgram GetDegreeProgram() {
+		DegreeProgram GetDegreeProgram() {			
 			return degreeProgram;
+		}
+
+	public:
+		string GetDegreeProgramToString() {
+			string degreeProgramString;
+
+			if (GetDegreeProgram() == 0) {
+				degreeProgramString = "SECURITY";
+			}
+			else if (GetDegreeProgram() == 1) {
+				degreeProgramString = "NETWORK";
+			}
+			else if (GetDegreeProgram() == 2) {
+				degreeProgramString = "SOFTWARE";
+			}
+
+			return degreeProgramString;
 		}
 
 	//Constructor for the class
@@ -113,41 +130,40 @@ class Student
 			SetDegreeProgram(degreeProgram);
 		}
 
-	public:
-		enum PrintOut {
-			StudentId,
-			FirstName,
-			LastName,
-			EmailAddress,
-			Age,
-			NumberofDaysToCompleteEachCourse,
-			DegreeProgram
-		};
+	enum PrintOut {
+		StudentId,
+		FirstName,
+		LastName,
+		EmailAddress,
+		Age,
+		NumberofDaysToCompleteEachCourse,
+		DegreeProgram
+	};
 
 	public:
 		void Print(PrintOut p) {
 			switch (p)
 			{
 				case StudentId:
-					cout << studentId;
+					cout << "Student Id: " + studentId;
 					break;
 				case FirstName:
-					cout << firstName;
+					cout << "First Name: " + firstName;
 					break;
 				case LastName:
-					cout << lastName;
+					cout << "Last Name: " + lastName;
 					break;
 				case EmailAddress:
-					cout << emailAddress;
+					cout << "Email: " + emailAddress;
 					break;
 				case Age:
-					cout << age;
+					cout << "Age: " + age;
 					break;
 				case NumberofDaysToCompleteEachCourse:
-					cout << numberOfDaysToCompleteEachCourse;
+					cout << "Number of Days to Complete Each Course: " + NumberofDaysToCompleteEachCourse;
 					break;
 				case DegreeProgram:
-					cout << degreeProgram;
+					cout << "Degree Program: " + degreeProgram;
 					break;
 				default:
 					break;
