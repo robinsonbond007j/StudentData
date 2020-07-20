@@ -95,7 +95,11 @@ public:
 					//Found invalid email address
 					cout << "Found invalid email address: " + e << endl;
 				}
-				else if (e.find('.@') == string::npos) {
+				else if (e.find('@') == string::npos) {
+					//Found invalid email address
+					cout << "Found invalid email address: " + e << endl;
+				}
+				else if (e.find('.') == string::npos) {
 					//Found invalid email address
 					cout << "Found invalid email address: " + e << endl;
 				}
