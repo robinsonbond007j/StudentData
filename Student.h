@@ -130,6 +130,9 @@ class Student
 			SetDegreeProgram(degreeProgram);
 		}
 
+	//Deconstructor for the class
+		~Student() {};
+
 	enum PrintOut {
 		StudentId,
 		FirstName,
