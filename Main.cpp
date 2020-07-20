@@ -14,19 +14,18 @@ int main() {
 	classRoster.printAll();
 	classRoster.printInvalidEmails();
 
-	//loop through classRosterArray and for each element:
+	//prints the average days for all the students in the classRosterAray
+	for (auto p : classRoster.classRosterArray) {
+		classRoster.printAverageDaysInCourse(p->GetStudentId());
+	}
 
-	//classRoster.printAverageDaysInCourse(/*current_object's student id*/);
+	classRoster.printByDegreeProgram(SOFTWARE);
 
+	classRoster.remove("A3");
 
+	classRoster.printAll();
 
-	//classRoster.printByDegreeProgram(SOFTWARE);
-
-	//classRoster.remove("A3");
-
-	//classRoster.printAll();
-
-	//classRoster.remove("A3");
+	classRoster.remove("A3");
 
 	return 0;
 }
